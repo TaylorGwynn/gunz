@@ -22,6 +22,10 @@ void UTP_PickUpComponent::OnSphereBeginOverlap(UPrimitiveComponent* OverlappedCo
 	AtommyCharacter* Character = Cast<AtommyCharacter>(OtherActor);
 	if(Character != nullptr)
 	{
+		
+		// UE_LOG(LogTemp, Warning, TEXT("OVERLAP!!!"));
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("OVERLAPPP"));
+		// GEngine->AddOnScreenDebugMessage(-1,5.f,FColor::Orange,FString::Printf(TEXT("My Location is: %s"),*GetActorLocation().ToString()));
 		// Notify that the actor is being picked up
 		OnPickUp.Broadcast(Character);
 
